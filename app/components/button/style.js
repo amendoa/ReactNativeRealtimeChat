@@ -9,8 +9,15 @@ export const style = StyleSheet.create({
 		margin: 4,
 		backgroundColor: '#65e3a3'
 	},
+	disabled: {
+		backgroundColor: '#dedede'
+	},
 	text: {
 		color: '#FFFFFF',
+		fontSize: 16
+	},
+	textDisabled: {
+		color: '#a0a0a0',
 		fontSize: 16
 	}
 });

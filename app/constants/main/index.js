@@ -1,0 +1,17 @@
+export const COLORS = {
+	DEFAULT: '#F1F1F1',
+	PRIMARY: '#5762D5',
+	SUCCESS: '#33F778',
+	WARNING: '#F8AB37',
+	DANGER: '#F83747',
+	INFO: '#379FF8',
+	TEXT: '#C7C7C7',
+	TEXT_DARK: '#737980'
+};
+
+export const CHAT_NICK_COLORS = [
+	'#5762D5',
+	'#5762D5',
+	'#33F778',
+	'#F83747'
+];

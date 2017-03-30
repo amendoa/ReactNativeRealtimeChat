@@ -5,8 +5,11 @@ export const style = StyleSheet.create({
 		height: 50,
 		backgroundColor: '#fff',
 		borderColor: '#ffffff',
-		borderWidth: 1,
+		borderWidth: 0.5,
 		borderRadius: 4,
 		margin: 2
+	},
+	error: {
+		borderColor: '#fe0000',
 	}
 });
