@@ -1,17 +1,12 @@
 import React, { Component } from 'react';
-import {
-	View,
-	Text
-} from 'react-native';
 import Section from '../../components/section';
+import ChatMessage from '../../components/chat-message';
 
 class ChatContainer extends Component {
 	render() {
 		return (
 			<Section>
-				<Text>
-					chat
-				</Text>
+				<ChatMessage />
 			</Section>
 		);
 	}
