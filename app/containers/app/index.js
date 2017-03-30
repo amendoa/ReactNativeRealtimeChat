@@ -5,6 +5,7 @@ import {
 	configureStore
 } from '../../store';
 import LoginContainer from '../login';
+import ChatContainer from '../chat';
 
 class AppContainer extends Component {
 	render () {
@@ -14,7 +15,15 @@ class AppContainer extends Component {
 				<Router>
 					<Scene key="root" >
 						<Scene
-							key="IndexScene"
+							key="ChatScene"
+							hideNavBar
+							component={ChatContainer}
+							duration={250}
+							animation='fade'
+						/>
+
+						<Scene
+							key="LoginScene"
 							hideNavBar
 							component={LoginContainer}
 							duration={250}
