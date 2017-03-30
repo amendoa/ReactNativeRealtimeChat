@@ -4,8 +4,14 @@ import * as styles from './style';
 
 class SectionComponent extends Component {
 	render () {
+		const sectionStyles = [
+			styles.style.default,
+			{
+				justifyContent: this.props.justify
+			}
+		];
 		return (
-			<View style={styles.style.default}>
+			<View style={sectionStyles}>
 				{
 					this.props.children
 				}

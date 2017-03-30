@@ -15,6 +15,7 @@ class InputText extends Component {
 				onChangeText={this.props.onChangeText}
 				value={this.props.value}
 				secureTextEntry={this.props.secureTextEntry}
+				placeholderTextColor="#dfdbdb"
 			/>
 		);
 	}

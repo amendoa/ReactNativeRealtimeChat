@@ -1,31 +1,28 @@
 import React, { Component } from 'react';
-import {
-	Button
-} from 'react-native';
-import Section from '../../components/section';
-import InputText from '../../components/input-text/';
+import SectionComponent from '../../components/section';
+import InputTextComponent from '../../components/input-text';
+import ButtonComponent from '../../components/button';
 
 class LoginContainer extends Component {
 	render () {
 		return (
-			<Section>
-				<InputText
+			<SectionComponent
+				justify="center"
+			>
+				<InputTextComponent
 					autoCorrect={false}
 					onChangeText={(username) => this.setState({ username })}
 					secureTextEntry={false}
-					placeholder={'teste'}
+					placeholder={'nickname'}
 				/>
 
-				<Button
-					title="Entrar"
-					color="#ff0084"
+				<ButtonComponent
+					text={'Sign in'}
 					onPress={() => {}}
-					width="200"
-					height="200"
 				>
 
-				</Button>
-			</Section>
+				</ButtonComponent>
+			</SectionComponent>
 		);
 	}
 }

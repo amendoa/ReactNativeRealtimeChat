@@ -2,8 +2,9 @@ import { StyleSheet } from 'react-native';
 
 export const style = StyleSheet.create({
 	default: {
-		flex: 1,
-		padding: 20,
-		backgroundColor: '#f5fcff'
+		color: '#000000',
+		fontSize: 16,
+		marginTop: 10,
+		marginBottom: 10
 	}
 });
