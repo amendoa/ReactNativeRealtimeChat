@@ -24,6 +24,7 @@ class InputText extends Component {
 				secureTextEntry={this.props.secureTextEntry}
 				placeholderTextColor="#dfdbdb"
 				multiline={this.props.multiline}
+				autoFocus
 			/>
 		);
 	}

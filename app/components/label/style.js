@@ -1,10 +1,12 @@
 import { StyleSheet } from 'react-native';
+import * as mainConstants from '../../constants/main';
 
 export const style = StyleSheet.create({
 	default: {
-		color: '#000000',
-		fontSize: 16,
-		marginTop: 10,
-		marginBottom: 10
+		color: mainConstants.COLORS.TEXT_DARK,
+		fontSize: 30,
+		marginTop: 30,
+		marginBottom: 30,
+		textAlign: 'center'
 	}
 });

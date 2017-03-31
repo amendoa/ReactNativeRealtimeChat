@@ -38,7 +38,6 @@ class ChatMessageComponent extends Component {
 			styles.style.messageContainer,
 			utils.className(styles.style.messageContainerBackgroundReverse, this.props.left),
 			utils.className(styles.style.messageContainerBackground, !this.props.left)
-
 		];
 
 		return (
@@ -52,8 +51,9 @@ class ChatMessageComponent extends Component {
 					}
 				</Text>
 				<Text style={styles.style.message} >
-					Fala mano opa suave lek opa la alalala ala la la
-
+					{
+						this.props.model.message
+					}
 				</Text>
 			</View>
 		);

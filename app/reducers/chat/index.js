@@ -2,6 +2,7 @@ import * as chatConstants from '../../constants/chat';
 
 const initialState = {
 	currentUser: null,
+	socket: null,
 	messages: []
 };
 
@@ -13,7 +14,7 @@ function chatReducer (state = initialState, action) {
 			});
 		case chatConstants.SIGNIN_USER:
 			return Object.assign({}, state, {
-				currentUSer: action.user
+				currentUser: action.user
 			});
 		default:
 			return state;

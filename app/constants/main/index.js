@@ -7,7 +7,7 @@ export const COLORS = {
 	INFO: '#379FF8',
 	TEXT: '#818181',
 	TEXT_DARK: '#3b3b3b',
-	TEXT_DISABLED: '#aaaaaa'
+	TEXT_DISABLED: '#c7c7c7'
 };
 
 export const CHAT_NICK_COLORS = [

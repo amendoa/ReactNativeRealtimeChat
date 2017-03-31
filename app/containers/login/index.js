@@ -5,6 +5,7 @@ import { Actions } from 'react-native-router-flux';
 import SectionComponent from '../../components/section';
 import InputTextComponent from '../../components/input-text';
 import ButtonComponent from '../../components/button';
+import LabelComponent from '../../components/label';
 import * as utils from '../../utils';
 import * as mainConstants from '../../constants/main';
 import * as chatActions from '../../actions/chat';
@@ -12,9 +13,7 @@ import * as chatActions from '../../actions/chat';
 class LoginContainer extends Component {
 	constructor (props) {
 		super(props);
-		this.state = {
-
-		};
+		this.state = {};
 	}
 
 	handlerSubmitClick = () => {
@@ -24,11 +23,10 @@ class LoginContainer extends Component {
 
 		const user = {
 			nickname: this.state.nickname,
-			color: mainConstants.CHAT_NICK_COLORS[utils.getRandomArbitrary(0, mainConstants.CHAT_NICK_COLORS.length)]
+			color: utils.getRandomArbitrary(0, mainConstants.CHAT_NICK_COLORS.length)
 		};
 
 		actions.signinUser(user);
-
 		Actions.ChatScene();
 	}
 
@@ -38,6 +36,10 @@ class LoginContainer extends Component {
 				justify="center"
 				padding={15}
 			>
+				<LabelComponent
+					text={'Type your nickname'}
+				/>
+
 				<InputTextComponent
 					autoCorrect={false}
 					onChangeText={(nickname) => this.setState({ nickname })}
