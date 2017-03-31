@@ -15,6 +15,13 @@ class AppContainer extends Component {
 				<Router>
 					<Scene key="root" >
 						<Scene
+							key="LoginScene"
+							hideNavBar
+							component={LoginContainer}
+							duration={250}
+							animation='fade'
+						/>
+						<Scene
 							key="ChatScene"
 							hideNavBar
 							component={ChatContainer}
@@ -22,13 +29,6 @@ class AppContainer extends Component {
 							animation='fade'
 						/>
 
-						<Scene
-							key="LoginScene"
-							hideNavBar
-							component={LoginContainer}
-							duration={250}
-							animation='fade'
-						/>
 					</Scene>
 				</Router>
 			</Provider>

@@ -9,7 +9,8 @@ class InputText extends Component {
 	render () {
 		const classNames = [
 			utils.className(styles.style.default, true),
-			utils.className(styles.style.error, this.props.error)
+			utils.className(styles.style.error, this.props.error),
+			utils.className(styles.style.expand, this.props.expand)
 		];
 
 		return (
@@ -22,6 +23,7 @@ class InputText extends Component {
 				value={this.props.value}
 				secureTextEntry={this.props.secureTextEntry}
 				placeholderTextColor="#dfdbdb"
+				multiline={this.props.multiline}
 			/>
 		);
 	}

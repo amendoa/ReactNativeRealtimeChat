@@ -8,11 +8,17 @@ export const style = StyleSheet.create({
 		padding: 10
 	},
 	messageContainer: {
-		backgroundColor: '#dedede',
+		backgroundColor: '#e7f2e9',
 		borderRadius: 20,
 		width: 250,
 		margin: 10,
 		padding: 15
+	},
+	messageContainerBackgroundReverse: {
+		backgroundColor: '#e7f2e9'
+	},
+	messageContainerBackground: {
+		backgroundColor: '#ececec'
 	},
 	message: {
 		fontSize: 15,

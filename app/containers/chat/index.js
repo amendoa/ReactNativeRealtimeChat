@@ -1,66 +1,119 @@
 import React, { Component } from 'react';
-import { ScrollView } from 'react-native';
+import {
+	ScrollView,
+	View
+} from 'react-native';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import SocketIOClient from 'socket.io-client';
 import Section from '../../components/section';
 import ChatMessage from '../../components/chat-message';
+import InputTextComponent from '../../components/input-text';
+import IconButton from '../../components/icon-button';
+import * as styles from './style';
+import * as mainConstants from '../../constants/main';
+import * as chatActions from '../../actions/chat';
+import * as utils from '../../utils';
 
 class ChatContainer extends Component {
+	constructor (props) {
+		super(props);
+		this.state = {
+
+		};
+		this.socket = SocketIOClient(mainConstants.API.ROOT, {
+			jsonp: false,
+			transports: ['websocket']
+		});
+
+		this.socket.on('server-message', this.onServerMessage);
+	}
+
+	componentWillMount () {
+		if (this.refs.scrollView) {
+			this.refs.scrollView.scrollToEnd();
+		}
+	}
+
+	onServerMessage = (message) => {
+		const {
+			actions
+		} = this.props;
+
+		actions.addMessage(message);
+	}
+
+	sendServerMessage = () => {
+		const {
+			data
+		} = this.props;
+
+		if (data.currentUser) {
+			const message = {
+				nickname: data.currentUser.nickname,
+				message: this.state.message,
+				color: data.currentUser.color
+			};
+			this.socket.send(message);
+		}
+	}
+
 	render () {
-		const models = [
-			{
-				nickname: 'amendowins',
-				message: 'en mi opinión, una cárcel en Estados Unidos es peor que la muerte.',
-				color: 0
-			},
-			{
-				nickname: 'amendowins',
-				message: 'en mi opinión, una cárcel en Estados Unidos es peor que la muerte.',
-				color: 1
-			},
-			{
-				nickname: 'amendowins',
-				message: 'en mi opinión, una cárcel en Estados Unidos es peor que la muerte.',
-				color: 2
-			},
-			{
-				nickname: 'amendowins',
-				message: 'en mi opinión, una cárcel en Estados Unidos es peor que la muerte.',
-				color: 3
-			},
-			{
-				nickname: 'amendowins',
-				message: 'en mi opinión, una cárcel en Estados Unidos es peor que la muerte.',
-				color: 3
-			},
-			{
-				nickname: 'amendowins',
-				message: 'en mi opinión, una cárcel en Estados Unidos es peor que la muerte.',
-				color: 3
-			},
-			{
-				nickname: 'amendowins',
-				message: 'en mi opinión, una cárcel en Estados Unidos es peor que la muerte.',
-				color: 3
-			}
-		];
+		const {
+			data
+		} = this.props;
+
+
 		return (
-			<Section
-			>
-				<ScrollView>
+			<Section>
+				<ScrollView
+					ref={(ref) => { this.scrollView = ref; }}
+					onContentSizeChange={(contentWidth, contentHeight) => { this.scrollView.scrollTo({ y: contentHeight, animated: true }); }}
+				>
 					{
-						models.map((item, index) => {
+						data.messages.map((item, index) => {
 							return (
 								<ChatMessage
 									model={item}
 									key={index}
-									left
+									left={index % 2 === 0}
 								/>
 							);
 						})
 					}
 				</ScrollView>
+				<View style={styles.style.actionsContainer} >
+					<InputTextComponent
+						autoCorrect={false}
+						onChangeText={(message) => this.setState({ message })}
+						secureTextEntry={false}
+						placeholder={'Your message'}
+						expand
+						multiline
+					/>
+					<IconButton
+						name="md-send"
+						size={30}
+						onPress={this.sendServerMessage}
+						disabled={utils.isEmptyOrSpaces(this.state.message)}
+
+					/>
+				</View>
 			</Section>
 		);
 	}
 }
 
-export default ChatContainer;
+const mapStateToProps = (state) => {
+	return {
+		data: state.chat,
+	};
+};
+
+const mapDispatchToProps = (dispatch) => {
+	return {
+		actions: bindActionCreators(chatActions, dispatch),
+	};
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ChatContainer);

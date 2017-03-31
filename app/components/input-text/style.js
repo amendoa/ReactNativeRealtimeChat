@@ -11,5 +11,8 @@ export const style = StyleSheet.create({
 	},
 	error: {
 		borderColor: '#fe0000',
+	},
+	expand: {
+		flex: 1
 	}
 });
