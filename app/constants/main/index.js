@@ -5,8 +5,8 @@ export const COLORS = {
 	WARNING: '#F8AB37',
 	DANGER: '#F83747',
 	INFO: '#379FF8',
-	TEXT: '#C7C7C7',
-	TEXT_DARK: '#737980'
+	TEXT: '#818181',
+	TEXT_DARK: '#3b3b3b'
 };
 
 export const CHAT_NICK_COLORS = [
