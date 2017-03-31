@@ -22,6 +22,7 @@ class LoginContainer extends Component {
 		return (
 			<SectionComponent
 				justify="center"
+				padding={15}
 			>
 				<InputTextComponent
 					autoCorrect={false}

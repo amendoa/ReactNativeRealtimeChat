@@ -7,7 +7,8 @@ class SectionComponent extends Component {
 		const sectionStyles = [
 			styles.style.default,
 			{
-				justifyContent: this.props.justify
+				justifyContent: this.props.justify,
+				padding: this.props.padding
 			}
 		];
 		return (
