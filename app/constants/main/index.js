@@ -18,5 +18,6 @@ export const CHAT_NICK_COLORS = [
 ];
 
 export const API = {
-	ROOT: 'http://192.168.0.101:7070'
+	//ROOT: 'http://192.168.0.101:7070'
+	ROOT: 'https://react-native-realtime-chat.herokuapp.com'
 };

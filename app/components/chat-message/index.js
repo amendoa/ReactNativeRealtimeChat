@@ -18,7 +18,7 @@ class ChatMessageComponent extends Component {
 				color: mainConstants.CHAT_NICK_COLORS[this.props.model.color]
 			}
 		];
-		const firstLetter = this.props.model.nickname.charAt(0).toUpperCase();
+		const firstLetter = String(this.props.model.nickname).charAt(0).toUpperCase();
 		return (
 			<View
 				order={this.props.left ? 0 : 1}

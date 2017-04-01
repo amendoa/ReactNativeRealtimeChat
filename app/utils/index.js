@@ -3,7 +3,7 @@ export function className (result, conditions) {
 }
 
 export function isEmptyOrSpaces(value) {
-	return value === null || value === undefined || value.match(/^ *$/) !== null;
+	return value === null || value === undefined || String(value).match(/^ *$/) !== null;
 }
 
 export function getRandomArbitrary(min, max) {
