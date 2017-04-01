@@ -30,12 +30,7 @@ export const style = StyleSheet.create({
 	},
 	tumb: {
 		alignItems: 'center',
-		justifyContent: 'center',
-		margin: 10,
-		width: 55,
-		height: 55,
-		borderRadius: 55 / 2,
-		//backgroundColor: 'red'
+		justifyContent: 'center'
 	},
 	tumbText: {
 		textAlign: 'center',
