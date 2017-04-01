@@ -18,4 +18,7 @@ https://github.com/almeida-matheus/NodejsRealtimeChat
 
 ### APK release
 
+[Download] (https://github.com/almeida-matheus/ReactNativeRealtimeChat/raw/master/android/app/app-release.apk)
+
+
 ![](https://raw.githubusercontent.com/almeida-matheus/ReactNativeRealtimeChat/master/mobilegif.gif)
