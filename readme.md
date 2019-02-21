@@ -1,12 +1,12 @@
 # React-native Real-time chat
 
-Is a little Real-time chat app (Is just for learning)
+A little Real-time chat app (It's just for learning)
 
-# I'm using
-  - react-native (obviously)
+# Relevant libs that i'm using
+  - react-native
 
 ### Installation
-Install the dependencies and devDependencies and start the server.
+Install the dependencies and start the server.
 
 ```sh
 $ npm install
